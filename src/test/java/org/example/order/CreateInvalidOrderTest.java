@@ -30,9 +30,6 @@ public class CreateInvalidOrderTest {
     private int invalidIngredientStatusCode;
     private int nullIngredientStatusCode;
 
-    private boolean expected;
-    private boolean expectedError;
-
     private String nullIngredientErrorMessage;
     private String accessToken;
 
@@ -46,8 +43,6 @@ public class CreateInvalidOrderTest {
         statusCode = 200;
         invalidIngredientStatusCode = 500;
         nullIngredientStatusCode = 400;
-        expected = true;
-        expectedError = false;
         nullIngredientErrorMessage = "Ingredient ids must be provided";
     }
 

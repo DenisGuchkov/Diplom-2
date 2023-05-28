@@ -21,8 +21,6 @@ public class LoginUserTest {
     private int statusCode;
     private int statusCodeError;
 
-    private boolean expected;
-    private boolean expectedError;
 
     private String errorMessage;
     private String accessToken;
@@ -37,8 +35,6 @@ public class LoginUserTest {
         accessToken = response.then().extract().path("accessToken");
         statusCode = 200;
         statusCodeError = 401;
-        expected = true;
-        expectedError = false;
         errorMessage = "email or password are incorrect";
         newPassword = "Si";
         newEmail = "Sb";
@@ -48,7 +44,7 @@ public class LoginUserTest {
     @DisplayName("Авторизация пользователя")
     public void loginUser() {
         Response response1 = userClient.loginUser(Credentials.from(user));
-        response1.then().assertThat().statusCode(statusCode).and().body("success", equalTo(expected));
+        response1.then().assertThat().statusCode(statusCode).and().body("success", equalTo(true));
     }
 
     @Test
